@@ -33,3 +33,17 @@ for link in links:
     soup=BeautifulSoup(src,"html.parser")
     salaries=soup.find("span",{"class":"d9FyLd"},{" class":"hgKElc"},{"class":"MjjYud"})
     salary.append(salaries.text.strip())
+
+
+data = {
+    "Job Title": job_title,
+    "Company Name": company_name,
+    "Location": location_name,
+    "Skills": skills, 
+    "links":links,
+    "salary":salary
+}
+
+df = pd.DataFrame(data)
+
+df.to_csv("C:/Users/MEGA TECH/Desktop/python projects.csv", index=False)
